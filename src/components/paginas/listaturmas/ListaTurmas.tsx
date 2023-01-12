@@ -4,6 +4,7 @@ import {Box} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 import { busca } from '../../../services/Service';
 import Turmas from '../../../models/Turmas';
+import './ListaTurmas.css'
 
 function ListaTurmas() {
   const [turmas, setTurmas] = useState<Turmas[]>([])

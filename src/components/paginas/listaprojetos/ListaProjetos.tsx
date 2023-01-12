@@ -4,6 +4,7 @@ import {Box} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 import { busca } from '../../../services/Service';
 import Projetos from '../../../models/Projetos';
+import './ListaProjetos.css'
 
 function ListaProjetos() {
   const [projetos, setProjetos] = useState<Projetos[]>([])

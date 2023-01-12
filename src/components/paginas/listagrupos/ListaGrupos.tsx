@@ -4,6 +4,7 @@ import {Box} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 import { busca } from '../../../services/Service';
 import Grupos from '../../../models/Grupos';
+import './ListaGrupos.css'
 
 function ListaGrupos() {
   const [grupos, setGrupos] = useState<Grupos[]>([])

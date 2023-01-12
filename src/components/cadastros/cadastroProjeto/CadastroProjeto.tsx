@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { buscaId, post, put } from '../../../services/Service';
 import { toast } from 'react-toastify'
 import Projetos from '../../../models/Projetos';
+import './CadastroProjeto.css'
 
 function CadastroProjetos() {
     let navigate = useNavigate();
@@ -84,7 +85,7 @@ function CadastroProjetos() {
                 <TextField value={projetos.linkProjeto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjetos(e)} id="linkProjeto" label="Link Projeto" variant="outlined" name="linkProjeto" margin="normal" fullWidth />
                 <TextField value={projetos.pitProjeto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjetos(e)} id="pitProjeto" label="Pit Projeto" variant="outlined" name="pitProjeto" margin="normal" fullWidth />
                 <TextField value={projetos.grupoId} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjetos(e)} id="grupoId" label="Número do Grupo" variant="outlined" name="grupoId" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" className='botaocadtema'>
+                <Button type="submit" variant="contained" className='botaoprojeto'>
                     Finalizar
                 </Button>
             </form>

@@ -4,6 +4,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { buscaId, post, put } from '../../../services/Service';
 import { toast } from 'react-toastify'
 import Grupos from '../../../models/Grupos';
+import './CadastroGrupo.css'
 
 function CadastroGrupos() {
     let navigate = useNavigate();
@@ -81,7 +82,7 @@ function CadastroGrupos() {
                 <TextField value={grupos.numeroGrupo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedGrupos(e)} id="numeroGrupo" label="Número do Grupo" variant="outlined" name="numeroGrupo" margin="normal" fullWidth />
                 <TextField value={grupos.maisInfos} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedGrupos(e)} id="maisInfo" label="Membros do Grupo" variant="outlined" name="maisInfos" margin="normal" fullWidth />
                 <TextField value={grupos.turmaId} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedGrupos(e)} id="turmaId" label="Número da Turma" variant="outlined" name="turmaId" margin="normal" fullWidth />
-                <Button type="submit" variant="contained" className='botaocadtema'>
+                <Button type="submit" variant="contained" className='botaogrupo'>
                     Finalizar
                 </Button>
             </form>
