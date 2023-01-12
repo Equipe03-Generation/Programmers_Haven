@@ -1,22 +1,13 @@
-import React, { ChangeEvent, useEffect, useState } from 'react'
-import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText, Grid } from "@material-ui/core";
-import { useNavigate, useParams } from 'react-router-dom';
-import { busca, buscaId, post, put } from '../../../services/Service';
+import React, {useState, useEffect, ChangeEvent} from 'react'
+import { TextField, Button, Grid, Typography } from "@material-ui/core"
+import { useNavigate, useParams } from 'react-router-dom'
+import { buscaId, post, put } from '../../../services/Service';
 import { toast } from 'react-toastify'
 import Projetos from '../../../models/Projetos';
-import Turmas from '../../../models/Turmas';
 
 function CadastroProjetos() {
     let navigate = useNavigate();
     const { id } = useParams<{ id: string }>();
-
-
-    const [turmas, setTurmas] = useState<Turmas>(
-        {
-            id: 0,
-            descricao: '',
-            isAtivo: ''
-        })
 
     const [projetos, setProjetos] = useState<Projetos>({
         id: 0,
@@ -27,44 +18,32 @@ function CadastroProjetos() {
         grupoId: '',
     })
 
-    useEffect(() => { 
-        setProjetos({
-            ...projetos,
-            turmas: turmas
-        })
-    }, [turmas])
-
-    useEffect(() => {
-        getTurmas()
-        if (id !== undefined) {
-            findByIdProjetos(id)
+    useEffect(() =>{
+        if(id !== undefined){
+            findById(id)
         }
     }, [id])
 
-    async function getTurmas() {
-        await busca("/turmas", setTurmas)
-    }
+    async function findById(id: string) {
+        buscaId(`/projetos/${id}`, setProjetos)
+        }
 
-    async function findByIdProjetos(id: string) {
-        await buscaId(`projetos/${id}`, setProjetos)
-    }
+        function updatedProjetos(e: ChangeEvent<HTMLInputElement>) {
 
-    function updatedProjetos(e: ChangeEvent<HTMLInputElement>) {
+            setProjetos({
+                ...projetos,
+                [e.target.name]: e.target.value,
+            })
+    
+        }
 
-        setProjetos({
-            ...projetos,
-            [e.target.name]: e.target.value,
-            turmas: turmas
-        })
-
-    }
-
-    async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-        e.preventDefault()
+        async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
+            e.preventDefault()
+            console.log("projetos" + JSON.stringify(projetos))
 
         if (id !== undefined) {
-            put(`/projetos/atualizado`, projetos, setProjetos)
-            toast.success('Projeto modificado com sucesso!', {
+            put(`/projetos/atualizar`, projetos, setProjetos)
+            toast.success('Projeto atualizado com sucesso!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -76,7 +55,7 @@ function CadastroProjetos() {
             });
         } else {
             post(`/projetos/cadastrar`, projetos, setProjetos)
-            toast.success('Projeto criado com sucesso!', {
+            toast.success('Projeto cadastrado com sucesso!', {
                 position: "top-right",
                 autoClose: 2000,
                 hideProgressBar: false,
@@ -94,24 +73,24 @@ function CadastroProjetos() {
     function back() {
         navigate('/projetos')
     }
+    
     return (
-        <Grid className='postcard'>
-        <Container maxWidth="sm">
-            <form onSubmit={onSubmit}>
-                <Typography variant="h3" color="textSecondary" component="h1" align="center" className='postcard' >Cadastro de Projeto</Typography>
+        <Grid className='fundotema'>
+            <Grid alignItems="center" item xs={12} className='fundotema'>
+            <form onSubmit={onSubmit}  className='formcadastro'>
+                <Typography variant="h3" className='fontecadtema' component="h1" align="center">Cadastro de Projeto</Typography>
                 <TextField value={projetos.nomeProjeto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjetos(e)} id="nomeProjeto" label="Nome Projeto" variant="outlined" name="nomeProjeto" margin="normal" fullWidth />
                 <TextField value={projetos.logoProjeto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjetos(e)} id="logoProjeto" label="Logo Projeto" variant="outlined" name="logoProjeto" margin="normal" fullWidth />
                 <TextField value={projetos.linkProjeto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjetos(e)} id="linkProjeto" label="Link Projeto" variant="outlined" name="linkProjeto" margin="normal" fullWidth />
                 <TextField value={projetos.pitProjeto} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjetos(e)} id="pitProjeto" label="Pit Projeto" variant="outlined" name="pitProjeto" margin="normal" fullWidth />
                 <TextField value={projetos.grupoId} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedProjetos(e)} id="grupoId" label="Número do Grupo" variant="outlined" name="grupoId" margin="normal" fullWidth />
-                <FormControl >
-                    <Button type="submit" variant="contained" className='botaopostagem'>
-                        Finalizar
-                    </Button>
-                </FormControl>
+                <Button type="submit" variant="contained" className='botaocadtema'>
+                    Finalizar
+                </Button>
             </form>
-        </Container>
+            </Grid>
         </Grid>
     )
 }
+
 export default CadastroProjetos;
