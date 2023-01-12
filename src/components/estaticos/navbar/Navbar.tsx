@@ -28,7 +28,7 @@ function Navbar() {
                         Turmas
                     </Box>
                 </Link>
-                <Link to="/equipes" className="text-decorator-none">
+                <Link to="/grupos" className="text-decorator-none">
                     <Box mx={5} className='cursor text-decorator-none center'>
                         <img src="https://cdn-icons-png.flaticon.com/512/1570/1570120.png" height={40} alt="" />
                         <br />

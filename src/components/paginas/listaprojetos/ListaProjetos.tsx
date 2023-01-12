@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom'
 import {Card, CardActions, CardContent, Button, Typography,Grid } from '@material-ui/core';
 import {Box} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
@@ -11,37 +10,41 @@ function ListaProjetos() {
   let navigate = useNavigate();
 
   async function getProjetos(){
-    await busca("/projetos", setProjetos)
+    await busca("/projetos/all", setProjetos)
   };
 
+  useEffect(() => {
 
-  useEffect(()=>{
     getProjetos()
-  }, [projetos.length]);
 
-  return (
+   }, [projetos.length]);
+  
+   return (
     <>
-    <Grid container className= 'displayflextema'>
-    {
-      projetos.map(projetos =>(
-      <Box m={2}>
-        <Card variant="outlined" className='papeltemas caixalistatema'>
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Tema
-            </Typography>
-            <Typography variant="h5" component="h2">
-             {projetos.nomeProjeto}
-            </Typography>
-          </CardContent>
-        </Card>
-      </Box>
-      ))
-      }
-    </Grid>
-    </>
-  );
+    <Grid container className= 'displayflex'>
+      {
+        projetos.map(projetos => (
+          <Box m={1} className='caixalistapost'>
+            <Card variant="outlined" className='papelpost'>
+              <CardContent>
+                <Typography color="textSecondary" gutterBottom className='cordefundo'>
+                  Projeto
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {projetos.nomeProjeto}
+                </Typography>
+                <Typography variant="body2" component="p">
+                  {projetos.linkProjeto}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
 
+        ))
+      } 
+       </Grid>
+    </>
+  )
 }
 
 export default ListaProjetos;

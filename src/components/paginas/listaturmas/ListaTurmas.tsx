@@ -7,30 +7,45 @@ import { busca } from '../../../services/Service';
 import Turmas from '../../../models/Turmas';
 
 function ListaTurmas() {
-  const [temas, setTurmas] = useState<Turmas[]>([])
+  const [turmas, setTurmas] = useState<Turmas[]>([])
   let navigate = useNavigate();
 
   async function getTurmas(){
-    await busca("/turmas", setTurmas)
-  }
+    await busca("/turmas/all", setTurmas)
+  };
 
-  return (
+  useEffect(() => {
+
+    getTurmas()
+
+   }, [turmas.length]);
+  
+   return (
     <>
-    <Grid container className= 'displayflextema'>
-      <Box m={2}>
-        <Card variant="outlined" className='papeltemas caixalistatema'>
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Tema
-            </Typography>
-            <Typography variant="h5" component="h2">
-            </Typography>
-          </CardContent>
-        </Card>
-      </Box>
-    </Grid>
+    <Grid container className= 'displayflex'>
+      {
+        turmas.map(turmas => (
+          <Box m={1} className='caixalistapost'>
+            <Card variant="outlined" className='papelpost'>
+              <CardContent>
+                <Typography color="textSecondary" gutterBottom className='cordefundo'>
+                  Turma
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {turmas.descricao}
+                </Typography>
+                <Typography variant="body2" component="p">
+                  {turmas.isAtivo}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+
+        ))
+      } 
+       </Grid>
     </>
-  );
-}  
+  )
+}
 
 export default ListaTurmas;

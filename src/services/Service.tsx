@@ -4,17 +4,17 @@ export const api = axios.create({
     baseURL: 'https://genworktable.onrender.com'
 })
 
-export const cadastroGrupo = async(url: any,dados: any,setDado: any) => { 
+export const CadastroGrupo = async(url: any,dados: any,setDado: any) => { 
     const resposta = await api.post(url,dados)
     setDado(resposta.data)
 }
 
-export const cadastroProjeto = async(url: any,dados: any,setDado: any) => { 
+export const CadastroProjeto = async(url: any,dados: any,setDado: any) => { 
     const resposta = await api.post(url,dados)
     setDado(resposta.data)
 }
 
-export const cadastroTurma = async(url: any,dados: any,setDado: any) => { 
+export const CadastroTurma = async(url: any,dados: any,setDado: any) => { 
     const resposta = await api.post(url,dados)
     setDado(resposta.data)
 }

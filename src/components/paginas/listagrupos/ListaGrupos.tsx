@@ -11,36 +11,42 @@ function ListaGrupos() {
   let navigate = useNavigate();
 
   async function getGrupos(){
-    await busca("/grupos", setGrupos)
-  }
+    await busca("/grupos/all", setGrupos)
+  };
 
+  useEffect(() => {
 
-  useEffect(()=>{
     getGrupos()
-  }, [grupos.length]);
 
-  return (
+   }, [grupos.length]);
+  
+   return (
     <>
-    <Grid container className= 'displayflextema'>
-    {
-      grupos.map(grupos =>(
-      <Box m={2}>
-        <Card variant="outlined" className='papeltemas caixalistatema'>
-          <CardContent>
-            <Typography color="textSecondary" gutterBottom>
-              Grupos
-            </Typography>
-            <Typography variant="h5" component="h2">
-             {grupos.numeroGrupo}
-            </Typography>
-          </CardContent>
-        </Card>
-      </Box>
-      ))
-      }
-    </Grid>
+    <Grid container className= 'displayflex'>
+      {
+        grupos.map(grupos => (
+          <Box m={1} className='caixalistapost'>
+            <Card variant="outlined" className='papelpost'>
+              <CardContent>
+                <Typography color="textSecondary" gutterBottom className='cordefundo'>
+                  Grupo
+                </Typography>
+                <Typography variant="h5" component="h2">
+                  {grupos.numeroGrupo}
+                </Typography>
+                <Typography variant="body2" component="p">
+                  {grupos.maisInfos}
+                </Typography>
+              </CardContent>
+            </Card>
+          </Box>
+
+        ))
+      } 
+       </Grid>
     </>
-  );
-}  
+  )
+}
 
 export default ListaGrupos;
+
