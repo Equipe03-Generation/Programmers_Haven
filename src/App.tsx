@@ -9,8 +9,6 @@ import ListaGrupos from './components/paginas/listagrupos/ListaGrupos';
 import ListaProjetos from './components/paginas/listaprojetos/ListaProjetos';
 import ListaTurmas from './components/paginas/listaturmas/ListaTurmas';
 import CadastroTurma from './components/cadastros/cadastroTurma/CadastroTurma';
-import DeletarProjeto from './components/cadastros/deletarProjeto/deletarProjeto';
-import DeletarTurma from './components/cadastros/deletarTurma/deletarTurma';
 import Navbar from './components/estaticos/navbar/Navbar';
 
 function App() {
@@ -39,10 +37,6 @@ function App() {
         <Route path="/cadastroprojetos/:id" element={<CadastroProjeto />} />
 
         <Route path="/cadastroturma/:id" element={<CadastroTurma />} />
-
-        <Route path="/deletarProjeto/:id" element={<DeletarProjeto />} />
-
-        <Route path="/deletarTurma/:id" element={<DeletarTurma />} />
         
       </Routes>
       <Footer />

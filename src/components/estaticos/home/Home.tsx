@@ -2,9 +2,6 @@ import React from 'react';
 import {Typography, Grid, Button} from '@material-ui/core';
 import {Box} from '@mui/material';
 import './Home.css';
-import { Link } from 'react-router-dom'
-import ModalProjeto from '../../modais/modalProjeto/ModalProjeto';
-import ListaProjetos from '../../paginas/listaprojetos/ListaProjetos';
 import TabProjetos from '../tabprojetos/tabprojetos';
 
 function Home() {
@@ -20,7 +17,7 @@ function Home() {
                     </Box>
                 </Grid>
                 <Grid item xs={6} >
-                    <img src="https://o.remove.bg/downloads/1949186d-2db3-4b2d-940f-702babb470c7/Cover-1-removebg-preview.png" alt="" width="500px" height="500px" />
+                <Box  className='img4 imagemcentrada'/>
                 </Grid>
                 <Grid xs={12} className='projetos'>
                     <TabProjetos />
