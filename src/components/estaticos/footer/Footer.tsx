@@ -11,7 +11,7 @@ function Footer() {
                 <Grid alignItems="center" item xs={12}>
                     <Box className='box1'>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom className='textos'>Siga-nos no LinkedIn e GitHub! </Typography>
+                            <Typography variant="h5" align="center" gutterBottom className='textos'>Siga-nos no LinkedIn! </Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
                             <a href="https://br.linkedin.com/school/generationbrasil" target="_blank">
@@ -21,7 +21,7 @@ function Footer() {
                     </Box>
                     <Box className='box2'>
                         <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom className='textos' >© 2022 Copyright:</Typography>
+                            <Typography variant="subtitle2" align="center" gutterBottom className='textos' >© 2023 Copyright:</Typography>
                         </Box>
                     </Box>
                 </Grid>

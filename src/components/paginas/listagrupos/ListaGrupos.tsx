@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
-import { Link } from 'react-router-dom'
-import {Card, CardActions, CardContent, Button, Typography,Grid } from '@material-ui/core';
+import {Card, CardContent, Typography,Grid } from '@material-ui/core';
 import {Box} from '@mui/material';
 import {useNavigate} from 'react-router-dom';
 import { busca } from '../../../services/Service';
@@ -25,7 +24,7 @@ function ListaGrupos() {
     <Grid container className= 'displayflex'>
       {
         grupos.map(grupos => (
-          <Box m={1} className='caixalistapost'>
+          <Box m={5} className='caixalistapost'>
             <Card variant="outlined" className='papelpost'>
               <CardContent>
                 <Typography color="textSecondary" gutterBottom className='cordefundo'>
@@ -37,10 +36,12 @@ function ListaGrupos() {
                 <Typography variant="body2" component="p">
                   {grupos.maisInfos}
                 </Typography>
+                <Typography variant="body2" component="p">
+                  {grupos.turmaId}
+                </Typography>
               </CardContent>
             </Card>
           </Box>
-
         ))
       } 
        </Grid>
