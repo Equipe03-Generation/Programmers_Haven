@@ -1,0 +1,14 @@
+.titulo{
+    font-weight: bold;
+ }
+
+ .imagetab {
+   background:linear-gradient(rgb(0, 140, 255),transparent) !important;
+   background-color: rgb(0, 140, 255) !important;
+
+ }
+
+ .papel{
+   background:linear-gradient(rgb(0, 140, 255),transparent) !important;
+   background-color: rgb(0, 140, 255) !important;
+}

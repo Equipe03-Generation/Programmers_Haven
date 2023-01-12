@@ -1,0 +1,18 @@
+.caixa{
+    background-color: rgb(0, 140, 255);
+}
+
+.titulo{
+   color: white !important;
+   font-weight: bold !important;
+}
+
+.botao{
+    border-color: white !important;
+    background-color: rgb(0, 140, 255);
+    color: white !important;
+}
+
+.projetos{
+    background-color: rgb(0, 140, 255)
+}
