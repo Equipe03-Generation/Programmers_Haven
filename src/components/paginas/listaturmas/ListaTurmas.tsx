@@ -14,16 +14,9 @@ function ListaTurmas() {
     await busca("/turmas", setTurmas)
   }
 
-
-  useEffect(()=>{
-    getTurmas()
-  }, [turmas.length]);
-
   return (
     <>
     <Grid container className= 'displayflextema'>
-    {
-      turmas.map(turmas =>(
       <Box m={2}>
         <Card variant="outlined" className='papeltemas caixalistatema'>
           <CardContent>
@@ -31,13 +24,10 @@ function ListaTurmas() {
               Tema
             </Typography>
             <Typography variant="h5" component="h2">
-             {turmas.descricao}
             </Typography>
           </CardContent>
         </Card>
       </Box>
-      ))
-      }
     </Grid>
     </>
   );
