@@ -32,9 +32,11 @@ function ListaTurmas() {
                   Turma
                 </Typography>
                 <Typography variant="h5" component="h2">
+                  Localidade:
                   {turmas.descricao}
                 </Typography>
                 <Typography variant="body2" component="p">
+                  Status:
                   {turmas.isAtivo}
                 </Typography>
               </CardContent>

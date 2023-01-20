@@ -80,7 +80,7 @@ function CadastroTurma() {
             <form onSubmit={onSubmit}  className='formcadastro'>
                 <Typography variant="h3" className='fontecadtema' component="h1" align="center">Cadastro de Turma</Typography>
                 <TextField className='cortemacaixa' value={turmas.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTurmas(e)} id="descricao" label="Descrição" name="descricao" margin="normal" fullWidth />
-                <TextField className='cortemacaixa' value={turmas.isAtivo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTurmas(e)} id="isAtivo" label="Ativo ou Desativo" name="isAtivo" margin="normal" fullWidth />
+                <TextField className='cortemacaixa' value={turmas.isAtivo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTurmas(e)} id="isAtivo" label="Ativo ou Inativo" name="isAtivo" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" className='botaoturma'>
                     Finalizar
                 </Button>

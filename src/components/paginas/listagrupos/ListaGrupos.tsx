@@ -32,12 +32,15 @@ function ListaGrupos() {
                   Grupo
                 </Typography>
                 <Typography variant="h5" component="h2">
+                  Número:
                   {grupos.numeroGrupo}
                 </Typography>
                 <Typography variant="body2" component="p">
+                  Membros:
                   {grupos.maisInfos}
                 </Typography>
                 <Typography variant="body2" component="p">
+                  Turma:
                   {grupos.turmaId}
                 </Typography>
               </CardContent>

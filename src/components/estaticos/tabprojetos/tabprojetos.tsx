@@ -14,7 +14,7 @@ function TabProjetos() {
   return (
     <>
       <TabContext value={value}>
-        <AppBar position="static">
+        <AppBar position="static" className='papel'>
           <Tabs centered onChange={handleChange}>
             <Tab className='colortab' label="Todos os projetos" value="1"/>
           </Tabs>
@@ -23,9 +23,6 @@ function TabProjetos() {
           <Box display="flex" flexWrap="wrap" justifyContent="center">
             <ListaProjetos />
           </Box>
-        </TabPanel>
-        <TabPanel value="2">
-          <Typography variant="h5" gutterBottom color="textPrimary" component="h5" align="center" className="titulo">Sobre-nós</Typography>
         </TabPanel>
       </TabContext>
     </>

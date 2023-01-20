@@ -32,21 +32,23 @@ function ListaProjetos() {
                   Projeto
                 </Typography>
                 <Typography variant="h5" component="h2">
+                  Nome:
                   {projetos.nomeProjeto}
                 </Typography>
                 <Typography variant="body2" component="p">
+                  Link:
                   {projetos.linkProjeto}
                 </Typography>
                   <Typography variant="h5" component="p">
+                  Logo:
                   {projetos.logoProjeto}
                 </Typography>
                 <Typography variant="h5" component="p">
-                  {projetos.linkProjeto}
-                </Typography>
-                <Typography variant="h5" component="p">
+                  Pit:
                   {projetos.pitProjeto}
                 </Typography>
                 <Typography variant="h5" component="p">
+                  Grupo:
                   {projetos.grupoId}
                 </Typography>
               </CardContent>
