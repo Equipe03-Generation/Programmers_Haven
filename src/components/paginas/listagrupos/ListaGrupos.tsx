@@ -11,7 +11,7 @@ function ListaGrupos() {
   let navigate = useNavigate();
 
   async function getGrupos(){
-    await busca("/grupos/all", setGrupos)
+    await busca("/grupos", setGrupos)
   };
 
   useEffect(() => {

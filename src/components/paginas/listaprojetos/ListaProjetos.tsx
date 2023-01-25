@@ -11,7 +11,7 @@ function ListaProjetos() {
   let navigate = useNavigate();
 
   async function getProjetos(){
-    await busca("/projetos/all", setProjetos)
+    await busca("/projetos", setProjetos)
   };
 
   useEffect(() => {

@@ -11,7 +11,7 @@ function ListaTurmas() {
   let navigate = useNavigate();
 
   async function getTurmas(){
-    await busca("/turmas/all", setTurmas)
+    await busca("/turmas", setTurmas)
   };
 
   useEffect(() => {
