@@ -13,8 +13,7 @@ function CadastroGrupos() {
     const [grupos, setGrupos] = useState<Grupos>({
         id: 0,
         numeroGrupo: '',
-        maisInfos: '',
-        turmaId: ''
+        maisInfos: ''
 
     })
 
@@ -81,7 +80,6 @@ function CadastroGrupos() {
                 <Typography variant="h3" className='fontecadtema' component="h1" align="center">Cadastro de Grupo</Typography>
                 <TextField value={grupos.numeroGrupo} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedGrupos(e)} id="numeroGrupo" label="Número do Grupo" variant="outlined" name="numeroGrupo" margin="normal" fullWidth />
                 <TextField value={grupos.maisInfos} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedGrupos(e)} id="maisInfo" label="Membros do Grupo" variant="outlined" name="maisInfos" margin="normal" fullWidth />
-                <TextField value={grupos.turmaId} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedGrupos(e)} id="turmaId" label="Número da Turma" variant="outlined" name="turmaId" margin="normal" fullWidth />
                 <Button type="submit" variant="contained" className='botaogrupo'>
                     Finalizar
                 </Button>

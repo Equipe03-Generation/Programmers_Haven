@@ -39,10 +39,6 @@ function ListaGrupos() {
                   Membros:
                   {grupos.maisInfos}
                 </Typography>
-                <Typography variant="body2" component="p">
-                  Turma:
-                  {grupos.turmaId}
-                </Typography>
               </CardContent>
             </Card>
           </Box>

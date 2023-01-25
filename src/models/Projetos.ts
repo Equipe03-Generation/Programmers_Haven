@@ -8,7 +8,6 @@ nomeProjeto: string;
 logoProjeto: string;
 linkProjeto: string;
 pitProjeto: string;
-grupoId: string;
 turmas?: Turmas| null
 grupos?: Grupos| null
 

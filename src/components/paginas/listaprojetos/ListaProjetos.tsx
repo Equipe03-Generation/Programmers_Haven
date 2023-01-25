@@ -47,10 +47,6 @@ function ListaProjetos() {
                   Pit:
                   {projetos.pitProjeto}
                 </Typography>
-                <Typography variant="h5" component="p">
-                  Grupo:
-                  {projetos.grupoId}
-                </Typography>
               </CardContent>
             </Card>
           </Box>

@@ -1,11 +1,12 @@
 import Projetos from './Projetos';
+import Turmas from './Turmas';
 
 interface Grupos{
 
 id: number;
 numeroGrupo: string;
 maisInfos: string;
-turmaId: string;
+turmas?: Turmas|null
 projetos?: Projetos| null
 
 }

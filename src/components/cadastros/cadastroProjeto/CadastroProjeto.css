@@ -10,3 +10,7 @@
 .projetocad{
     background-color: rgb(160, 159, 162) !important;
 }
+
+.centro {
+    justify-content: center;
+}

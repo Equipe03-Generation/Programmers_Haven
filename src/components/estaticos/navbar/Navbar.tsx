@@ -44,16 +44,19 @@ function Navbar() {
                 </Link> 
                     <Box mx={5} className='cursor text-decorator-none center'>
                     <ModalTurma/>
-                        Criar Turma
+                        + Turma
                     </Box>               
                 <Box mx={5} className='cursor text-decorator-none center'>
                     <ModalGrupo/>
-                        Criar Grupo
+                        + Grupo
                 </Box>
+                <Link to="/cadastroprojeto" className="text-decorator-none">
                 <Box mx={5} className='cursor text-decorator-none center'>
-                    <ModalProjeto/>
-                        Criar Projeto
+                        <img src="https://cdn-icons-png.flaticon.com/512/1317/1317626.png" height={40} alt="" />
+                        <br />
+                        + Projeto
                 </Box>
+                </Link>
             </Box>
         </Toolbar>
     </AppBar>
