@@ -26,7 +26,7 @@ function ListaProjetos() {
       {
         projetos.map(projetos => (
           <Box m={5} className='caixalistapost'>
-            <Card variant="outlined" className='papelpost'>
+            <Card variant="outlined" className='papelpost card'>
               <CardContent>
                 <Typography color="textSecondary" gutterBottom className='cordefundo'>
                   Projeto
@@ -35,7 +35,7 @@ function ListaProjetos() {
                   Nome:
                   {projetos.nomeProjeto}
                 </Typography>
-                <Typography variant="body2" component="p">
+                <Typography variant="h5" component="p">
                   Link:
                   {projetos.linkProjeto}
                 </Typography>

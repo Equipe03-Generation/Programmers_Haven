@@ -19,7 +19,7 @@ function TabProjetos() {
             <Tab className='colortab' label="Todos os projetos" value="1"/>
           </Tabs>
         </AppBar>
-        <TabPanel value="1" >
+        <TabPanel value="1" className='fundotab'>
           <Box display="flex" flexWrap="wrap" justifyContent="center">
             <ListaProjetos />
           </Box>

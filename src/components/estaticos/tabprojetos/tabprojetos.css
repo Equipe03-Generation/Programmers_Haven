@@ -16,3 +16,8 @@
 .cortab {
   background: rgb(254, 255, 255) !important;
 }
+
+.fundotab{
+  background:linear-gradient(rgb(251, 252, 252),transparent) !important;
+  background-color: rgb(251, 251, 251) !important;
+}

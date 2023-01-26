@@ -31,3 +31,9 @@ background-color: rgb(226, 57, 226) !important;
 .displayflex{
     display: flex !important;
 }
+
+.card {
+    Width: 400px;
+    Min-height: 100px;
+    Padding: 0px
+}

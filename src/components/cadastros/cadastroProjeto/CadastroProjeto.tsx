@@ -163,7 +163,7 @@ function CadastroProjetos() {
                         }
                     </Select>
                     <FormHelperText>Escolha uma turma e grupo para finalizar</FormHelperText>
-                    <Button type="submit" variant="contained" color="primary">
+                    <Button type="submit" variant="contained" className='botaogrupo'>
                         Finalizar
                     </Button>
                 </FormControl>
